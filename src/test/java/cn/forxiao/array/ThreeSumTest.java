@@ -32,9 +32,28 @@ public class ThreeSumTest {
         Assertions.assertEquals(expected, JSON.toJSONString(result));
     }
 
+    @ParameterizedTest
+    @MethodSource("dataProvide2")
+    void testDoublePointerThreeSum(int[] nums,String expected) {
+        List<List<Integer>> result = threeSum.doublePointerThreeSum(nums);
+        Assertions.assertEquals(expected, JSON.toJSONString(result));
+    }
+
     static Stream<Arguments> dataProvide(){
         List<Integer> result1 = Arrays.asList(-1, 0, 1);
         List<Integer> result2 = Arrays.asList(-1, 2, -1);
+        List<List<Integer>> result = Arrays.asList(result1,result2);
+
+        return Stream.of(
+                Arguments.arguments(new int[]{-1, 0, 1, 2, -1, -4}, JSON.toJSONString(result))
+//                ,
+//                Arguments.arguments(new int[]{2, 7, 11, 15, 12}, 18, new int[]{1, 2})
+        );
+    }
+
+    static Stream<Arguments> dataProvide2(){
+        List<Integer> result1 = Arrays.asList(-1,-1,2);
+        List<Integer> result2 = Arrays.asList(-1,0,1);
         List<List<Integer>> result = Arrays.asList(result1,result2);
 
         return Stream.of(
