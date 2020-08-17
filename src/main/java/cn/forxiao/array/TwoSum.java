@@ -10,7 +10,7 @@ import java.util.Map;
  **/
 public class TwoSum {
 
-    public int[] traversalTwoSum(int nums[], int target){
+    public int[] traversalTwoSum(int[] nums, int target){
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] == target - nums[i]){
@@ -21,7 +21,7 @@ public class TwoSum {
         throw new IllegalArgumentException("No two sum solution");
     }
 
-    public int[] hashTwoSum(int nums[], int target){
+    public int[] hashTwoSum(int[] nums, int target){
         Map<Integer,Integer> indexMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
