@@ -32,15 +32,15 @@ public class ListNode {
         return Objects.hash(val, next);
     }
 
-    @Override
-    public String toString() {
-        List<Integer> vals = new ArrayList<>();
-        vals.add(this.val);
-        ListNode node = this;
-        while (node.next != null) {
-            node = node.next;
-            vals.add(node.val);
-        }
-        return Arrays.toString(vals.toArray());
-    }
+//    @Override
+//    public String toString() {
+//        List<Integer> vals = new ArrayList<>();
+//        vals.add(this.val);
+//        ListNode node = this;
+//        while (node.next != null) {
+//            node = node.next;
+//            vals.add(node.val);
+//        }
+//        return Arrays.toString(vals.toArray());
+//    }
 }
